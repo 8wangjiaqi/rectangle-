@@ -1,3 +1,15 @@
-body{
-  background:red;
+div{
+  width:370px;
+  margin:50px auto;
+  font-size:1.1em;
+}
+input, label{
+  margin:5px 0;
+  font-size: 1em;
+  padding-left: 5px;
+}
+
+#culate{
+  width:70px;
+  margin-left: 63px;
 }
