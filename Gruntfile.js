@@ -93,11 +93,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('lint', ['htmlhint','csslint','eslint']);
+  grunt.registerTask('default', ['htmlhint','csslint','eslint','htmlmin', 'cssmin', 'uglify']);
   grunt.registerTask('cover', ['mocha_istanbul']);
   grunt.registerTask('check-cover', ['istanbul_check_coverage']);
   grunt.registerTask('unitTest', ['mocha']);
-  grunt.registerTask('minify', ['htmlmin', 'cssmin', 'uglify']);
+  //grunt.registerTask('default', ['htmlmin', 'cssmin', 'uglify']);
 
 };
 
