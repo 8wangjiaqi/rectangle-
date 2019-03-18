@@ -93,7 +93,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', ['htmlhint','csslint','eslint']);
+  grunt.registerTask('lint', ['htmlhint','csslint','eslint']);
   grunt.registerTask('cover', ['mocha_istanbul']);
   grunt.registerTask('check-cover', ['istanbul_check_coverage']);
   grunt.registerTask('unitTest', ['mocha']);
