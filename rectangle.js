@@ -7,13 +7,20 @@ $(function(){
 
 
   $btnCal.click(function(){
-    var w=Number($width.val()),
+    /*var w=Number($width.val()),
         h=Number($height.val());
 
     var p=2*(w+h),
-        a=w*h;
+        a=w*h;*/
 
-    $perimeter.val(p);
-    $area.val(a);
+    var w = $width.val(),
+        h = $height.val();
+    var r = new Rectangle(w, h);
+
+    /*$perimeter.val(p);
+    $area.val(a);*/
+      
+    $perimeter.val(r.perimeter());
+    $area.val(r.area());
   });
 });
