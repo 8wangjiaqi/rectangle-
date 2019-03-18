@@ -4,7 +4,7 @@
   "description": "计算矩形的周长和面积",
   "main": "rectangle.js",
   "scripts": {
-    "test": "grunt lint && grunt unitTest && grunt minify"
+    "test": "grunt lint && grunt unitTest && grunt minify && echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "grunt": "^1.0.3",
