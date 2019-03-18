@@ -1,4 +1,4 @@
-function  rectangle(){
+/*function  rectangle(){
   return {
     'perimeter':function(width,height){
       return 2*(Number(width) + Number(heigth));
@@ -8,4 +8,20 @@ function  rectangle(){
       return Number(width) *Number(height);
     }
   }
+}*/
+
+function Rectangle(width, height) {
+  var w = Number(width),
+      h = Number(height);
+
+  this.area = function() {
+    return w * h;
+            
+  };
+
+  this.perimeter = function() {
+    return 2 * (w + h);
+            
+  };
+
 }
