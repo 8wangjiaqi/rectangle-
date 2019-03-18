@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                           
       },
       files: {
-        src: 'dist./index.html',
+        src: 'dist/index.html',
         dest: 'dist/index.html'
                           
       }
