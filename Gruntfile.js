@@ -63,8 +63,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-istanbul');
   grunt.loadNpmTasks('grunt-mocha');
 
-  grunt.registerTask('default', ['htmlhint','csslint','eslint','mochacli','mocha']);
+  grunt.registerTask('lint', ['htmlhint','csslint','eslint']);
   grunt.registerTask('cover', ['mocha_istanbul']);
   grunt.registerTask('check-cover', ['istanbul_check_coverage']);
+  grunt.registerTask('unitTest', ['mocha']);
+
 };
 

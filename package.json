@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "计算矩形的周长和面积",
   "main": "rectangle.js",
+  "scripts": {
+    "test": "grunt lint && grunt unitTest"
+  },
+
   "dependencies": {
     "grunt": "^1.0.3",
     "grunt-htmlhint": "^0.9.13"
@@ -19,9 +23,6 @@
     "grunt-mocha-istanbul": "^5.0.2",
     "istanbul": "^0.4.5",
     "mocha": "^6.0.2"
-  },
-  "scripts": {
-    "test": "mocha && echo \"Error: no test specified\" && exit 0" "
   },
   "repository": {
     "type": "git",
