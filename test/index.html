@@ -8,11 +8,16 @@
   </head>
   <body>
     <div id="mocha"></div>
+    <script src="chai.js"></script>
     <script src="mocha.js"></script>
     <script>mocha.setup('bdd');</script>
-    <script src="tests.js"></script>
+    <script src="calc.js"></script>
+    <script src="calc.spec.js"></script>
     <script>
-      mocha.run();
+      if(navigator.userAgent.indexOf('PhantomJS') < 0) {
+        mocha.run();
+      }
     </script>
-  </body>
+
+    </body>
 </html>
