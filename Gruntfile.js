@@ -116,8 +116,9 @@ module.exports = function(grunt) {
   grunt.registerTask('check-cover', ['istanbul_check_coverage']);
   grunt.registerTask('unitTest', ['mocha']);
   //grunt.registerTask('minify', ['htmlmin', 'cssmin', 'uglify']);
-  grunt.registerTask('release', ['copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'cssmin', 'htmlmin']);
+  grunt.registerTask('release', ['copy', 'concat', 'uglify', 'cssmin', 'htmlmin']);
   grunt.registerTask('clena', ['clena']);
+  grunt.registerTask('use', ['useminPrepare', 'usemin']);
 
 };
 
