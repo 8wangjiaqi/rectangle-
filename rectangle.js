@@ -1,4 +1,4 @@
-/* global Rectangle, validate: true */
+/* global Rectangle, validate, isLegalKey: true */
 $(function(){
   var $width = $('#width'),
       $height = $('#height'),
@@ -54,6 +54,12 @@ $(function(){
     }
   });
     
+  $width.keypress(function(e) {
+    if(!isLegalKey(e.key, e.target.value, e.target.selectionStart)) {
+      e.preventDefault();
+    }
+  });
+
   /*if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(w)){
       $widthValidation.html('数据不合法！');
       $width.select();//把焦点抓住
@@ -95,6 +101,12 @@ $(function(){
       $height.select();
     } else {
       $heightValidate.html('');
+    }
+  });
+
+  $height.keypress(function(e) {
+    if(!isLegalKey(e.key, e.target.value, e.target.selectionStart)) {
+      e.preventDefault();
     }
   });
 
