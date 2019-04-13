@@ -1,1 +1,0 @@
-$(function(){var t=$("#width"),i=$("#height"),e=$("#culate"),l=$("#perimeter"),c=$("#area");e.click(function(){var e=t.val(),a=i.val(),r=new Rectangle(e,a);l.val(r.perimeter()),c.val(r.area())})});

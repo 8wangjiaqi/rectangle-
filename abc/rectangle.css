@@ -16,26 +16,15 @@ span {
 }
 
 
-#culate{
+#calculate{
   margin-left: 63px;
   width: 70px;
 }
 
 
-#width-validation,
-#height-validation{
-  position:absolute;
-  width:200px;
-  height:25px;
-  right:100px;
-  color:red;
-}
-
-
-#width-validation{
-  top:55px;
-}
-
-#height-validation{
-  top:90px;
+#width-validate,
+#height-validate {
+  color: red;
+  font-size: 0.8em;
+  margin-left: 63px;
 }

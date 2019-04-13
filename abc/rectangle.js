@@ -1,14 +1,17 @@
-/* global Rectangle: true */
+/* global Rectangle, validate: true */
 $(function(){
-  var $width=$('#width');
-  var $height=$('#height');
-  var $btnCal=$('#culate');
-  var $perimeter=$('#perimeter');
-  var $widthValidation=$('#$width-validation');
-  var $heightValidation=$('#height-validation');
-  var $area=$('#area');
+  var $width = $('#width'),
+      $height = $('#height'),
+      $btnCal = $('#calculate'),
+      $perimeter = $('#perimeter'),
+      $area = $('#area'),
+      $widthValidate = $('#width-validate'),
+      $heightValidate = $('#height-validate'),
+      isPassValidate = false;
 
-  $width.keypress(function(e){
+
+
+  /*$width.keypress(function(e){
     if (/[abcdf-zABCDF-Z`~!@#$%^&*()=_+[\]{}|;:'",<>/?\\]/.test(e)){
       e.preventDefault();
     }
@@ -21,13 +24,13 @@ $(function(){
         if(e.target.selectionStart === 0) e.preventDefault();
       }
     }
-  });
+  });*/
 
   $width.focusout(function(){
     //var w=$width.val();
     
-    var result = valid($width.val());
-
+    var result = validate($width.val());
+    isPassValidate = result.isOK;
     /*if(w===''){
       $widthValidation.html('宽度不能为空！');
       $width.select();//把焦点抓住
@@ -41,18 +44,17 @@ $(function(){
       return;
     }else{
       $widthValidation.html('');
-    }
-    */
-
+    }*/
+    
     if(!result.isOK){
-      $widthValidation.html('宽度'+result.reason);
+      $widthValidate.html('宽度'+result.reason);
       $width.select();
     }else {
       $widthValidate.html('');
     }
   });
     
-    /*if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(w)){
+  /*if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test(w)){
       $widthValidation.html('数据不合法！');
       $width.select();//把焦点抓住
       return;
@@ -86,17 +88,23 @@ $(function(){
       $heightValidation.html('');
     }*/
 
-
-
-
+    var result = validate($height.val());
+    isPassValidate = result.isOK;
+    if(!result.isOK) {
+      $heightValidate.html('高度' + result.reason);
+      $height.select();
+    } else {
+      $heightValidate.html('');
+    }
   });
 
   $btnCal.click(function(){
+    if(!isPassValidate) return;
 
     var w=$width.val(),
         h=$height.val();
     
-    if(w===''){
+    /*if(w===''){
       $widthValidation.html('宽度不能为空！');
       return;
     }
@@ -104,18 +112,15 @@ $(function(){
     if(h===''){
       $heightValidation.html('长度不能为空！');
       return;          
-    }
+    }*/
 
-   
-    
     var r = new Rectangle(w, h);
 
+    $perimeter.val(r.perimeter());
+    $area.val(r.area());
    
     //var p=2*(w+h),
     //    a=w*h;
-        
-    $perimeter.val(r.perimeter());
-    $area.val(r.area());
                                 
   });
 
