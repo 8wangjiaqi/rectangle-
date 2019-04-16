@@ -112,13 +112,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('lint', ['htmlhint','csslint','eslint']);
-  grunt.registerTask('cover', ['mocha_istanbul']);
-  grunt.registerTask('check-cover', ['istanbul_check_coverage']);
+  //grunt.registerTask('cover', ['mocha_istanbul']);
+  //grunt.registerTask('check-cover', ['istanbul_check_coverage']);
   grunt.registerTask('unitTest', ['mocha']);
   //grunt.registerTask('minify', ['htmlmin', 'cssmin', 'uglify']);
-  grunt.registerTask('release', ['copy', 'concat', 'uglify', 'cssmin', 'htmlmin']);
-  grunt.registerTask('clena', ['clena']);
-  grunt.registerTask('use', ['useminPrepare', 'usemin']);
+  grunt.registerTask('release', ['copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'cssmin', 'htmlmin', 'clean']);
+  //grunt.registerTask('clena', ['clena']);
+  //grunt.registerTask('use', ['useminPrepare', 'usemin']);
 
 };
 
